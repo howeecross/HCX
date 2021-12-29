@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{'Card Settings'|translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+  <ion-list>
+    <div *ngIf="!bitpayCard">
+      <ion-item-divider></ion-item-divider>
+      <ion-item>
+        <ion-label>{{'Show in Home' | translate}}</ion-label>
+        <ion-toggle [(ngModel)]="showAtHome" (ionChange)="integrationChange()"></ion-toggle>
+      </ion-item>
+    </div>
+
+    <div *ngIf="bitpayCard">
+      <ion-item-divider>
+        <span>BitPay Visa&reg; Cards</span>
+      </ion-item-divider>
+      <ion-item>
+        <div>
+          <div>
+            xxxx-xxxx-xxxx-{{bitpayCard.lastFourDigits}}
+          </div>
+          <ion-note>
+            {{bitpayCard.email}}
+          </ion-note>
+        </div>
+        <ion-icon item-end (click)="unlinkCard(bitpayCard)">
+          <img src="assets/img/icon-unlink.svg" />
+        </ion-icon>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>

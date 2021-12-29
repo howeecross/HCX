@@ -1,0 +1,166 @@
+page-wallet-details {
+  .scroll-content {
+    margin-top: 0 !important;
+  }
+  ion-header, .toolbar-background {
+    background-color: initial !important;
+    // background-color: rgba(0,0,0,0) !important;
+
+    &:after {
+      height: 0  !important;
+    } 
+  }
+  
+  .balance-card {
+    background: color($colors, primary);
+    overflow: hidden;
+  }
+  .balance-header {
+    margin-top: 44px;
+    height: 12rem;
+    color: color($colors, light);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .balance-str {
+    cursor: pointer;
+    font-size: 32px;
+    font-weight: 600;
+  }
+  .balance-alt-str {
+    padding-top: 5px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .balance-hidden {
+    .title {
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+  .balance-error {
+    .title {
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+  .balance-spendable {
+    margin-top: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    ion-icon {
+      vertical-align: text-bottom;
+      margin-right: 5px;
+    }
+  }
+  .balance-scanning {
+    .title {
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+  .tx-history {
+    img {
+      width: 35px;
+    }
+    .action {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .amount {
+      color: color($colors, dark);
+      .received {
+        color: color($colors, success);
+      }
+    }
+    .date {
+      font-size: 12.5px;
+    }
+  }
+
+  .middle-message {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .wallet-info {
+    font-weight: 400;
+    color: color($colors, light);
+    height: 3rem;
+    padding: 0 5px;
+    img {
+      float: left;
+      margin-right: 4px;
+    }
+    .testnet {
+      height: 2rem;
+      width: 2rem;
+      margin-top: 5px;
+    }
+    .testnet-text {
+      color: color($colors, light);
+      height: 3rem;
+      width: 4rem;
+    }
+    .read-only {
+      height: 3rem;
+      width: 2rem;
+    }
+    .read-only-text {
+      height: 3rem;
+      width: 5rem;
+    }
+    .auditable-text {
+      height: 3rem;
+      width: 4rem;
+    }
+    .custom-bws {
+      height: 3rem;
+      width: 3rem;
+    }
+    .wallet-type {
+      display: block;
+      float: left;
+      margin: 0 5px;
+      padding-top: 5px;
+      font-size: 11px;
+    }
+    ion-spinner {
+      float: right;
+      width: 20px;
+      height: 20px;
+      margin: 5px 5px 0 0;
+      * {
+        stroke: color($colors, light);
+      }
+    }
+  }
+
+  .icon-services {
+    border-radius: 50%;
+    padding: 1px;
+    width: 36px;
+    height: 36px;
+    box-shadow: none;
+    border: 1px solid #d7d7d7;
+  }
+
+  .total-locked-amount {
+    color: color($colors, dark);
+  }
+  .total-alt-locked-amount, .double-spend {
+    text-align: end;
+    font-size: 12.5px;
+  }
+}
