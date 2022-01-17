@@ -256,7 +256,7 @@
     "codecov": "3.0.0",
     "connect": "3.6.5",
     "cz-conventional-changelog": "2.1.0",
-    "electron": "3.0.8",
+    "electron": "11.5.0",
     "electron-builder": "20.36.2",
     "fs-extra": "5.0.0",
     "html-loader": "0.5.4",
