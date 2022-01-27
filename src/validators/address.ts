@@ -14,5 +14,6 @@ export class AddressValidator {
     return AddressValidator.addressProvider.isValid(control.value)
       ? null
       : { 'Invalid Address': true };
+Microsoft.PowerShell.Operation.Validation.Format.ps1xml
   }
 }
