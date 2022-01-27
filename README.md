@@ -6,7 +6,7 @@
 
 Copay is a secure bitcoin wallet platform for both desktop and mobile devices. Copay uses [Bitcore Wallet Service](https://github.com/bitpay/bitcore-wallet-service) (BWS) for peer synchronization and network interfacing.
 
-Binary versions of Copay are available for download at [Copay.io](https://copay.io/#download). Copay Binaries are signed with the key `copay@bitpay.com` – See the section [`How to Verify Copay Signatures`](https://github.com/bitpay/copay#how-to-verify-copay-signatures) for details.
+Binary versions of Hcoinx are available for download at [Copay.io](https://copay.io/#download). Copay Binaries are signed with the key `copay@bitpay.com` – See the section [`How to Verify Copay Signatures`](https://github.com/bitpay/copay#how-to-verify-copay-signatures) for details.
 
 This project was created by BitPay Inc, and it is maintained by BitPay and houndreds of contributors. There is a BitPay branded version of Copay at mobile phone stores, BitPay Wallet, which features integration with the BitPay Visa Debit Card, as its main difference.
 
