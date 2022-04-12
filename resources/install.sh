@@ -1,4 +1,53 @@
 echo "Installing imagemagick... (This requires Homebrew)"
-# This requires Homebrew: http://brew.sh/
+# This version: '2.1'
+
+services:
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.3.0
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+      - "2265:22"
+    volumes:
+      - ./vendor/docker/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+    environment:
+      discovery.type: single-node
+      ES_JAVA_OPTS: -Xmx512m -Xms512m
+      ELASTIC_PASSWORD: changeme
+    networks:
+      - elk
+    healthcheck:
+      test: curl -f http://elastic:changeme@elasticsearch:9200
+      interval: 10s
+      timeout: 1s
+
+  logstash:
+    image: datacite/shiba-inu
+    env_file: .env
+    volumes:
+      - ./config/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./config/pipelines.yml:/usr/share/logstash/config/pipelines.yml
+      - ./pipeline/:/usr/share/logstash/pipeline/
+      - ./tmp/:/usr/share/logstash/tmp/
+      - ./patterns:/usr/share/logstash/patterns/
+      - ./plugins:/usr/share/logstash/plugins/
+      - ./data:/usr/share/logstash/data/
+      - ./spec:/usr/share/logstash/spec
+      - ./filters:/usr/share/logstash/filters
+    ports:
+      - "5000:5000"
+      - "9600:9600"
+    environment:
+      LS_JAVA_OPTS: -Xmx1024m -Xms1024m
+      # XPACK_MONITORING_ENABLED: "true"
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+networks:
+
+  elk:
+    driver: bridge Homebrew: http://brew.sh/
 brew install imagemagick
 # imagemagick provides the `convert` utility, used to generate ICO files
