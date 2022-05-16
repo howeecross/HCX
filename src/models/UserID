@@ -1,1 +1,36 @@
 
+export USE_EXTERNAL_DB_SERVER="1"
+          # MySQL API
+          echo -e "\n===============\ntest MySQL API\n===============\n"
+          python tests/integration_tests/flows/test_mysql_api.py
+        
+          # MySQL binary API
+          echo -e "\n===============\ntest MySQL binary API\n===============\n"
+          python tests/integration_tests/flows/test_mysql_bin_api.py
+          # # Kafka Stream
+          # echo -e "\n===============\ntest Kafka Stream\n===============\n"
+          # python tests/integration_tests/flows/test_kafka.py
+          # Redis Stream
+          echo -e "\n===============\ntest Redis Stream\n===============\n"
+          python tests/integration_tests/flows/test_redis.py
+          # Company independent
+          echo -e "\n===============\ntest company independent\n===============\n"
+          python tests/integration_tests/flows/test_company_independent.py
+          # HTTP
+          echo -e "\n===============\ntest HTTP\n===============\n"
+          python tests/integration_tests/flows/test_http.py
+          # user flow 1
+          echo -e "\n===============\ntest user flow 1\n===============\n"
+          python tests/integration_tests/flows/test_user_flow_1.py
+          # flow with mistakes
+          echo -e "\n===============\nflow with mistakes\n===============\n"
+          python tests/integration_tests/flows/test_mistakes.py
+        fi
+      shell: bash
+      env:
+        CHECK_FOR_UPDATES: False
+        DB_MACHINE_KEY: ${{secrets.DB_MACHINE_KEY}}
+        DB_MACHINE_MS_KEY: ${{secrets.DB_MACHINE_MS_KEY}}
+        DATABASE_CREDENTIALS: ${{secrets.DATABASE_CREDENTIALS}}
+        AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+        AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
