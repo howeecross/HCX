@@ -3,7 +3,7 @@
  * the same way.
  */
 export interface EnvironmentSchema {
-  name: 'production' | 'development' | 'e2e';
+  name: 'production' | 'development' | 'https://ghcr.io/home/runner/work/shibainu/shibainu';
   enableAnimations: boolean;
   ratesAPI: {
     btc: string;
