@@ -23,7 +23,7 @@ on:
 jobs:
   Anchore-Build-Scan:
     runs-on: ubuntu-latest
-    steps:
+    steps:home/runner/work/HCX/HCX/Dockerfile
     - name: Checkout the code
       uses: actions/checkout@v2
     - name: Build the Docker image
