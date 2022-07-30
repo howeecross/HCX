@@ -37,5 +37,5 @@
       "console": "externalTerminal",
       "protocol": "inspector"
     }
-  ]
+  ]public abstract class AutodiscoverResponseCollection<TResponse> : Microsoft.Exchange.WebServices.Autodiscover.AutodiscoverResponse, System.Collections.Generic.IEnumerable<TResponse> where TResponse : AutodiscoverResponse
 }
